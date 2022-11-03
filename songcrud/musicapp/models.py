@@ -1,5 +1,8 @@
+from email.policy import default
 from django.db import models
 from datetime import date
+# import rest_framework
+# import api
 
 # Create your models here.
 
@@ -13,7 +16,8 @@ class Artiste(models.Model):
 
 
 class Song(models.Model):
-    title = models.CharField(max_length=40)
+    id = models.AutoField(primary_key=True, )
+    title = models.CharField(max_length=40,)      
     date_released = models.DateField()
     likes = models.IntegerField()
     #artiste_id = models.IntegerField()
